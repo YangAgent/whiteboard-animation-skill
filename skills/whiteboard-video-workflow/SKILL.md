@@ -202,4 +202,4 @@ python3 <skill-dir>/scripts/workflow_helper.py gen-prompts "<storyboardJsonPath>
 - `workflow_helper.py` - 提供 `init-dirs`（创建目录结构）、`gen-prompts`（解析 storyboard 生成提示词）、`merge-videos`（合并视频片段）三个子命令
 - `generate-storyboard.py` - 解析 SRT + groups.json 生成 storyboard.json
 - `generate-image.py` - Banana2 模型文生图，支持单张和批量并发模式
-- `banana_prompt_template.py` - 白板风格提示词模板
+- `prompt_template.py` - 白板风格提示词模板

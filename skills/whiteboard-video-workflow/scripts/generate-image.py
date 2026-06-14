@@ -11,7 +11,7 @@ from urllib.request import urlopen, Request
 from urllib.error import HTTPError
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from banana_prompt_template import whiteboard_prompt_template
+from prompt_template import whiteboard_prompt_template
 
 # --- Config ---
 API_BASE = 'https://www.runninghub.cn/openapi/v2'
