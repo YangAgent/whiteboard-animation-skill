@@ -244,7 +244,7 @@ async def generate_single(prompt, aspect_ratio, output_dir, index, total):
     ext = result.get('outputType', 'png')
     timestamp = int(time.time() * 1000)
     suffix = f'_{str(index + 1).zfill(len(str(total)))}' if total > 1 else ''
-    filename = f'banana2_{timestamp}{suffix}.{ext}'
+    filename = f'img_{timestamp}{suffix}.{ext}'
     filepath = str(Path(output_dir) / filename)
 
     async def _download():

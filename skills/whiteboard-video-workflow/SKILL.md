@@ -194,12 +194,12 @@ python3 <skill-dir>/scripts/workflow_helper.py gen-prompts "<storyboardJsonPath>
 ### references/
 
 - `storyboard-parser.md` - SRT 分镜解析工作流指令，由步骤 3 的 subagent 读取执行
-- `image-generator.md` - Banana2 图片生成工作流指令，由步骤 5 的 subagent 读取执行
+- `image-generator.md` - 图片生成工作流指令，由步骤 5 的 subagent 读取执行
 
 ### scripts/
 
 - `check_env.py` - 一次性环境预检，检查 Python 虚拟环境、API Key，自动安装可修复的依赖
 - `workflow_helper.py` - 提供 `init-dirs`（创建目录结构）、`gen-prompts`（解析 storyboard 生成提示词）、`merge-videos`（合并视频片段）三个子命令
 - `generate-storyboard.py` - 解析 SRT + groups.json 生成 storyboard.json
-- `generate-image.py` - Banana2 模型文生图，支持单张和批量并发模式
+- `generate-image.py` - 模型文生图，支持单张和批量并发模式
 - `prompt_template.py` - 白板风格提示词模板
