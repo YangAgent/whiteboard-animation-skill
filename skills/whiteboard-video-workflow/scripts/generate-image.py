@@ -15,9 +15,8 @@ from prompt_template import whiteboard_prompt_template
 
 # --- Config ---
 API_BASE = 'https://www.runninghub.cn/openapi/v2'
-TEXT_TO_IMAGE_PATH = '/rhart-image-n-g31-flash/text-to-image'
+TEXT_TO_IMAGE_PATH = '/alibaba/wan-2.7/text-to-image'
 QUERY_PATH = '/query'
-RESOLUTION = '2k'
 
 MAX_RETRIES = 3
 SUBMIT_MAX_RETRIES = 8
@@ -138,11 +137,20 @@ async def with_retry(fn, max_retries=MAX_RETRIES, context=''):
 
 
 # --- Step 1: Submit text-to-image task ---
+def image_size_for_aspect_ratio(aspect_ratio):
+    normalized = aspect_ratio.strip()
+    if normalized == '9:16':
+        return 1440, 2560
+    return 2560, 1440
+
+
 def _submit_task_sync(prompt, aspect_ratio):
+    width, height = image_size_for_aspect_ratio(aspect_ratio)
     res = request_sync('POST', TEXT_TO_IMAGE_PATH, {
         'prompt': prompt,
-        'aspectRatio': aspect_ratio,
-        'resolution': RESOLUTION,
+        'width': width,
+        'height': height,
+        'thinkingMode': True,
     })
     if not res.get('taskId'):
         raise RetryableError(f'No taskId in response: {json.dumps(res)}')

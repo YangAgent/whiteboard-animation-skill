@@ -103,8 +103,9 @@ SRT 格式示例：
 
 根据场景内容和上下文内容，为每个分组添加 `visualHint` 字段，作为视觉提示，
 每个分组后续会根据内容生成图片，visualHint最主要的作用就是根据上下文，确定图片的基准视觉元素。
+只描述画面中应该出现的视觉元素和构图，不要添加解释性说明。
 例如：
-visualHint: "图片元素包含...，呼应内容中的..."
+visualHint: "图片元素包含..."
 
 ---
 
@@ -119,13 +120,13 @@ visualHint: "图片元素包含...，呼应内容中的..."
       "sceneId": "scene_001",
       "fromIndex": 1,
       "toIndex": 3,
-      "visualHint": "图片元素包含...，呼应内容中的..."
+      "visualHint": "图片元素包含..."
     },
     {
       "sceneId": "scene_002",
       "fromIndex": 4,
       "toIndex": 7,
-      "visualHint": "图片元素包含...，呼应内容中的..."
+      "visualHint": "图片元素包含..."
     }
   ]
 }
@@ -278,13 +279,13 @@ __RESULT_JSON__
       "sceneId": "scene_001",
       "fromIndex": 1,
       "toIndex": 3,
-      "visualHint": "图片元素包含...，呼应内容中的..."
+      "visualHint": "图片元素包含..."
     },
     {
       "sceneId": "scene_002",
       "fromIndex": 4,
       "toIndex": 7,
-      "visualHint": "图片元素包含...，呼应内容中的..."
+      "visualHint": "图片元素包含..."
     }
   ]
 }
@@ -327,7 +328,7 @@ __RESULT_JSON__
           "relativeDuration": 1833
         }
       ],
-      "visualHint": "图片元素包含...，呼应内容中的..."
+      "visualHint": "图片元素包含..."
     },
     {
       "id": "scene_002",
@@ -355,7 +356,7 @@ __RESULT_JSON__
           "relativeDuration": 1833
         }
       ],
-      "visualHint": "图片元素包含...，呼应内容中的..."
+      "visualHint": "图片元素包含..."
     }
   ]
 }

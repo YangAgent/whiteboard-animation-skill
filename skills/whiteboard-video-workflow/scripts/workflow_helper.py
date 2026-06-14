@@ -67,17 +67,12 @@ def gen_prompts(storyboard_path: str):
     sb = json.loads(Path(storyboard_path).read_text(encoding="utf-8"))
     prompts = []
     for scene in sb.get("scenes", []):
-        # Concatenate all segment texts
-        text_parts = [seg["text"] for seg in scene.get("segments", [])]
-        full_text = join_scene_text(text_parts)
-        # Append visualHint
         visual_hint = ensure_ending(scene.get("visualHint", ""), "。")
         if visual_hint:
-            content = f'以下是我的内容：\n"{full_text}"\n\n视觉元素建议：\n"{visual_hint}"'
+            content = f'视觉元素建议：\n"{visual_hint}"'
         else:
-            content = f'以下是我的内容：\n"{full_text}"'
-        prompt = content
-        prompts.append(prompt)
+            content = ""
+        prompts.append(content)
     print(json.dumps(prompts, ensure_ascii=False))
 
 
